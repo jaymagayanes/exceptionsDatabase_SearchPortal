@@ -1,0 +1,82 @@
+<body>
+ <!-- TOP BAR -->
+<header class="top-bar">
+  <div class="logo">
+    <div class="logo-mark">SAP</div>
+    School Approval Portal
+  </div>
+  <div class="search-wrap">
+    <input id="appSearch" type="text" placeholder="Country, exception, keyword…"
+      onkeydown="if(event.key==='Enter')runSearch();"
+      oninput="debounceSearch();" autocomplete="off" class="search-input" />
+    <button onclick="runSearch()" class="search-btn">Search</button>
+  </div>
+
+  <!-- PROGRAMME DROPDOWN -->
+  <div id="progDropdown" class="prog-dropdown">
+    <button id="progDropdownBtn" onclick="toggleProgDropdown(event)" type="button" class="prog-dropdown-btn">
+      <span id="progDropdownLabel">All Programmes</span>
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" id="progDropdownArrow" style="flex-shrink:0;transition:transform .2s">
+        <path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div id="progDropdownPanel" class="prog-dropdown-panel">
+      <label class="prog-option">
+        <input type="radio" name="programme" value="" checked onchange="onProgChange()" style="cursor:pointer;" />
+        <span class="prog-option-label">All Programmes</span>
+      </label>
+      <div class="prog-option-divider"></div>
+      <label class="prog-option"><input type="radio" name="programme" value="early years" onchange="onProgChange()" style="cursor:pointer;" /><span class="prog-option-label">Early Years</span></label>
+      <label class="prog-option"><input type="radio" name="programme" value="primary" onchange="onProgChange()" style="cursor:pointer;" /><span class="prog-option-label">Primary</span></label>
+      <label class="prog-option"><input type="radio" name="programme" value="lower secondary" onchange="onProgChange()" style="cursor:pointer;" /><span class="prog-option-label">Lower Secondary</span></label>
+      <label class="prog-option"><input type="radio" name="programme" value="upper secondary" onchange="onProgChange()" style="cursor:pointer;" /><span class="prog-option-label">Upper Secondary</span></label>
+      <label class="prog-option"><input type="radio" name="programme" value="advanced" onchange="onProgChange()" style="cursor:pointer;" /><span class="prog-option-label">Advanced</span></label>
+      <label class="prog-option"><input type="radio" name="programme" value="gq" onchange="onProgChange()" style="cursor:pointer;" /><span class="prog-option-label">GQ</span></label>
+    </div>
+  </div>
+
+  <!-- SHEET DROPDOWN -->
+  <div id="sheetDropdown" class="sheet-dropdown">
+    <button id="sheetDropdownBtn" onclick="toggleSheetDropdown(event)" type="button" class="sheet-dropdown-btn">
+      <span id="sheetDropdownLabel">All Sheets</span>
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" id="sheetDropdownArrow" style="flex-shrink:0;transition:transform .2s">
+        <path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div id="sheetDropdownPanel" class="sheet-dropdown-panel">
+      <label class="sheet-option">
+        <input type="checkbox" id="sheetCheckAll" checked onchange="toggleAllSheets(this)" style="cursor:pointer;" />
+        <span class="sheet-option-label" style="font-weight:700;color:var(--blue);">All Sheets</span>
+      </label>
+      <div class="sheet-option-divider"></div>
+      <label class="sheet-option"><input type="checkbox" value="eois" checked onchange="onSheetChange()" style="cursor:pointer;" /><span class="sheet-option-label">EOIs</span></label>
+      <label class="sheet-option"><input type="checkbox" value="postapprovalexceptions" checked onchange="onSheetChange()" style="cursor:pointer;" /><span class="sheet-option-label">Post Approval</span></label>
+      <label class="sheet-option"><input type="checkbox" value="governmentpermissions" checked onchange="onSheetChange()" style="cursor:pointer;" /><span class="sheet-option-label">Gov Permissions</span></label>
+      <label class="sheet-option"><input type="checkbox" value="registrationexceptions" checked onchange="onSheetChange()" style="cursor:pointer;" /><span class="sheet-option-label">Registration</span></label>
+      <label class="sheet-option"><input type="checkbox" value="annualinvoicingexceptions" checked onchange="onSheetChange()" style="cursor:pointer;" /><span class="sheet-option-label">Annual Invoicing</span></label>
+      <label class="sheet-option"><input type="checkbox" value="retiredexceptions" checked onchange="onSheetChange()" style="cursor:pointer;" /><span class="sheet-option-label">Retired</span></label>
+    </div>
+  </div>
+</header>
+
+<!-- APP BODY -->
+<div class="app-body">
+  <aside class="sidebar">
+    <div class="sidebar-heading">
+      <span id="matchCount">Results</span>
+      <div id="sidebarNav" class="sidebar-nav"></div>
+    </div>
+    <div id="sidebarList" class="sidebar-list">
+      <p class="hint">Your results will appear here.</p>
+    </div>
+  </aside>
+  <main id="resultArea" class="stage">
+    <div class="empty-state">
+      <div class="empty-icon">◎</div>
+      <p>Search above to find exception records.</p>
+    </div>
+  </main>
+</div>
+
+
+</body>
