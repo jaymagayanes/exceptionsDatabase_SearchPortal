@@ -1,7 +1,7 @@
 # SAP Portal — Exceptions Database Web App
 **Internal Data Search Portal · Power Query · JavaScript · HTML/CSS · Dataverse**
 
-This project replaced an unstructured Excel spreadsheet used by my team to track school approval exceptions across multiple operational categories. What started as a manual lookup tool became a production-grade internal web portal, backed by a SharePoint-connected data pipeline and a lightweight frontend querying a live Dataverse table.
+This project transformed an unstructured Excel spreadsheet used to track school approval exceptions across multiple operational categories into a production-grade internal web portal. It is supported by a SharePoint-connected data pipeline and a lightweight frontend that queries a live Dataverse table.
 
 It is currently in active daily use by the School Approval team.
 
