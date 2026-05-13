@@ -5,8 +5,15 @@ This project transformed an unstructured Excel spreadsheet used to track school 
 
 It is currently in active daily use by the School Approval team.
 
-🎥 https://drive.google.com/file/d/1idUeVykxLUvIzHl4FQpl8xme_jfie2cT/view?usp=sharing
-🔗 https://satportal.powerappsportals.com/
+## 🔗 Demo & Access
+
+- 🎥 [Watch Demo Video](https://drive.google.com/file/d/1idUeVykxLUvIzHl4FQpl8xme_jfie2cT/view)  
+  Walkthrough of the system features and usage.
+
+- 🔗 [Access SAT Portal](https://satportal.powerappsportals.com/)  
+  Main platform for school approval workflows.
+
+> ⚠️ Note: Portal access may require authorized credentials.
 ---
 
 ## 🎯 Why I Built This
